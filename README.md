@@ -89,11 +89,5 @@ Figure 5: Threat concentration heatmap
     Comply with local privacy laws
 
 🤝 Contributing
-Diagram
-Code
-📜 License
-
-MIT Licensed - See LICENSE
-Open Source
 
 💡 Pro Tip: Combine with Wireshark for advanced analysis!
