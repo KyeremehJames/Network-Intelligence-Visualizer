@@ -1,103 +1,99 @@
-# Network Intelligence Visualizer
+# 🌐 Network Intelligence Visualizer 🔍
 
-![Network Visualization Example](docs/visualization-example.png)
+![Network Visualization Dashboard](docs/demo.gif)  
+*Figure 1: Interactive threat visualization on Google Maps*
 
-A Python-based security tool that analyzes network traffic, identifies suspicious IP addresses, and visualizes their geographical locations on Google Maps.
+## ✨ Features
 
-## Features
+| Feature | Emoji | Description |
+|---------|-------|-------------|
+| **PCAP Analysis** | 📦 | Parses network packet captures |
+| **Threat Detection** | 🚨 | Identifies malicious IPs |
+| **GeoIP Mapping** | 🌍 | Visualizes IP locations globally |
+| **Multi-Output** | 📊 | CLI reports & KML maps |
 
-- **PCAP Analysis**: Parses network packet captures to extract source/destination IPs
-- **Threat Detection**: Checks IPs against configurable blacklists
-- **Geolocation**: Maps IP addresses to physical locations using GeoIP
-- **Visualization**: Generates KML files for Google Maps integration
-- **Multi-Output Formats**:
-  - Command-line reporting
-  - Interactive map visualizations
+## 🛠️ Installation
 
-## Prerequisites
+```bash
+# Clone with git
+git clone https://github.com/yourusername/network-intelligence-visualizer.git
+cd network-intelligence-visualizer
 
-- Python 3.8+
-- GeoLiteCity database (free version available)
-- Required Python packages:
-  ```bash
-  pip install pygeoip dpkt
+# Install dependencies
+pip install -r requirements.txt
 
-Installation
+# Download GeoIP database
+wget -P data/ https://example.com/GeoLiteCity.dat
 
-    Clone the repository:
-    bash
-
-    git clone https://github.com/yourusername/network-intelligence-visualizer.git
-    cd network-intelligence-visualizer
-
-    Download the GeoLiteCity database:
-
-        Obtain from MaxMind: https://dev.maxmind.com/geoip/geolite2-free-geolocation-data
-
-        Place in project directory as data/GeoLiteCity.dat
-
-Usage
-Basic Command
+Installation Screenshot
+Figure 2: Installation process
+🚀 Usage
+🔧 Basic Command
 bash
 
-python networkintelligencevisualizer.py <username> <password> <output_format>
+python networkintelligencevisualizer.py <username> <password> <mode>
 
-Output Formats
-
-    CLI (Command Line Interface):
-    bash
+📟 CLI Mode
+bash
 
 python networkintelligencevisualizer.py admin admin123 cli
 
-Displays threat information in terminal.
-
-KML (Google Maps Visualization):
+CLI Output
+*Figure 3: Command-line threat analysis*
+🗺 KML Mode
 bash
 
-    python networkintelligencevisualizer.py admin admin123 kml > threats.kml
-
-    Generates KML file for import into Google My Maps.
-
-Authentication
-
-Default credentials:
-
-    Username: admin
-
-    Password: admin123
-
-Note: Change these in the source code before production use.
-Configuration
-
-Modify the following in networkintelligencevisualizer.py:
-python
-
-# IP Blacklist
-black_listed_ip = ['217.168.1.2', '192.37.115.0'] 
-
-# Authentication
-auth_users = {"admin": "admin123"}
-
-Sample Output
-Command Line Output
-
--------------------------------------------------------------------------------------------------
-[+] Source IP: 192.37.115.0 ------> Destination IP: 192.168.1.100
-Source IP Information:
-
-[*] Target : 192.37.115.0 Geo Located.
-
-[+] City: Berlin, Region : BE, Country: Germany
-
-[+] Latitude : 52.52, Longitude : 13.40
-
-KML Visualization
+python networkintelligencevisualizer.py admin admin123 kml > threats.kml
 
 Google Maps Visualization
-Security Considerations
+Figure 4: Interactive threat map
+⚙️ Configuration
+python
 
-    Always obtain proper authorization before monitoring network traffic
+# 📁 networkintelligencevisualizer.py
 
-    Change default credentials before deployment
+# 🔒 Authentication
+auth_users = {
+    "admin": "securepassword123",  # 👈 Change this!
+    "analyst": "complex!pass321"
+}
 
-    Use in compliance with all applicable laws and regulations
+# 🚫 Threat Intelligence
+black_listed_ip = [
+    '217.168.1.2',  # Known malicious IP
+    '192.37.115.0'  # Suspicious host
+]
+
+📊 Sample Outputs
+🔍 Threat Analysis Report
+
+[🚨 ALERT] Suspicious connection detected!
+├─ Source: 192.37.115.0 (Berlin, DE)
+├─ Destination: 192.168.1.100
+└─ Confidence: 92%
+
+🌐 GeoIP Visualization
+
+GeoIP Heatmap
+Figure 5: Threat concentration heatmap
+🔒 Security Notice
+
+⚠️ Important Usage Guidelines:
+
+    Always obtain proper authorization
+
+    Never run on production networks
+
+    Rotate credentials regularly
+
+    Comply with local privacy laws
+
+🤝 Contributing
+Diagram
+Code
+📜 License
+
+MIT Licensed - See LICENSE
+Open Source
+
+💡 Pro Tip: Combine with Wireshark for advanced analysis!
