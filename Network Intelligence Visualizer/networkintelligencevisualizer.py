@@ -1,10 +1,4 @@
-#!/usr/bin/env python3
-"""
 Threat Intelligence Visualizer
-Author: [Your Name]
-Date: [Current Date]
-"""
-
 import sys
 import logging
 import yaml
