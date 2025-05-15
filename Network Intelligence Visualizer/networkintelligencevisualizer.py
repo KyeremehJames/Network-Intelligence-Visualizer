@@ -1,4 +1,5 @@
 Threat Intelligence Visualizer
+
 import sys
 import logging
 import yaml
